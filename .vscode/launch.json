@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "FastAPI: Uvicorn",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": [
+        "app.main:app",
+        "--reload",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8000"
+      ],
+      "cwd": "${workspaceFolder}\\code\\backend",
+      "python": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+      "envFile": "${workspaceFolder}\\code\\backend\\.env",
+      "justMyCode": true,
+      "jinja": true
+    },
+    {
+      "name": "Frontend: Vite Dev Server",
+  "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}\\code\\frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "console": "integratedTerminal"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack: Backend + Frontend",
+      "configurations": [
+        "FastAPI: Uvicorn",
+        "Frontend: Vite Dev Server"
+      ]
+    }
+  ]
+}

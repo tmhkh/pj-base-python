@@ -1,0 +1,65 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Run FastAPI Backend",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"python -m uvicorn app.main:app --reload"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}\\code\\backend"
+			},
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Run Vite Frontend",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				"npm run dev"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}\\code\\frontend"
+			},
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Update API Docs",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				".venv\\Scripts\\python.exe scripts/update_docs.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		},
+		{
+			"label": "Update API Docs",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-NoLogo",
+				"-NoProfile",
+				"-Command",
+				".venv\\Scripts\\python.exe scripts/update_docs.py"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "none"
+		}
+	]
+}

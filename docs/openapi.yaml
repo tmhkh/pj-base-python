@@ -1,0 +1,40 @@
+openapi: 3.0.3
+info:
+  title: API仕様書（メッセージエコー）
+  version: 1.0.0
+  description: FastAPI が提供する API の入出力構造
+paths:
+  /api/v1/messages/echo:
+    post:
+      summary: メッセージエコー
+      description: 送信されたメッセージをそのまま返却
+      operationId: echo_message
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EchoMessageRequest'
+      responses:
+        '200':
+          description: 成功
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/EchoMessageResponse'
+components:
+  schemas:
+    EchoMessageRequest:
+      type: object
+      properties:
+        text:
+          type: string
+          description: 文字列（必須）
+      required:
+        - text
+    EchoMessageResponse:
+      type: object
+      properties:
+        echo:
+          type: string
+          description: 受信した文字列
