@@ -14,3 +14,7 @@ dist/
 code/frontend/dist/
 .vite/
 .DS_Store
+
+# Frontend local environment
+code/frontend/.env
+code/frontend/.env.production

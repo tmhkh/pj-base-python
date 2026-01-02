@@ -4,5 +4,5 @@
     "python.analysis.extraPaths": [
         "${workspaceFolder}\\code\\backend"
     ],
-    "python.terminal.activateEnvironment": true
+    "python.terminal.activateEnvironment": false
 }
